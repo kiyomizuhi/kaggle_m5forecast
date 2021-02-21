@@ -1,0 +1,13 @@
+version: "3"
+services:
+  work:
+    restart: always
+    tty: true
+    container_name: work
+    build:
+      context: .
+      dockerfile: ./Dockerfile-python
+    volumes:
+      - .:/home/work
+    ports:
+      - "8888:8888"
